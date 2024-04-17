@@ -36,9 +36,11 @@ html{
 }
 .container p {
   background: #fff;
+    font-family:'Courier New';
 }
 .container h5 {
   background: #fff;
+  font-family: cursive;
 }
 .socail {
   background: #fff;
