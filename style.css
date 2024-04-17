@@ -33,6 +33,7 @@ html{
 .content {
   background: #fff;
   text-align: center;
+  padding: 10px;
 }
 .container p {
   background: #fff;
