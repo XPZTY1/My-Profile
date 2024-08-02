@@ -1,19 +1,19 @@
 html{
-    background: #9cd9cf;
+    background: #a6acb3;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: #9cd9cf;
+    background: #a6acb3;
 }
 .container {
     height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #9cd9cf;
+    background: #a6acb3;
 }
 .card {
     width: 250px;
