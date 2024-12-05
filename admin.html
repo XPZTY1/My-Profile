@@ -15,7 +15,7 @@
         <input type="text" id="caption" name="caption" required>
         <br>
         <label for="profileImage">Profile Image:</label>
-        <input type="file" id="profileImage" name="profileImage">
+        <input type="file" id="profileImage" name="profileImage" accept="image/*">
         <br>
         <button type="submit">Update Profile</button>
     </form>
@@ -36,13 +36,46 @@
             if (file) {
                 const reader = new FileReader();
                 reader.onload = function(e) {
-                    localStorage.setItem('profileImage', e.target.result);
+                    const img = new Image();
+                    img.src = e.target.result;
+
+                    img.onload = function() {
+                        const canvas = document.createElement('canvas');
+                        const ctx = canvas.getContext('2d');
+
+                        // ตั้งค่า canvas ให้มีขนาด 320x320
+                        canvas.width = 320;
+                        canvas.height = 320;
+
+                        // คำนวณสัดส่วนการครอป
+                        const aspectRatio = Math.min(img.width / canvas.width, img.height / canvas.height);
+                        const sx = (img.width - canvas.width * aspectRatio) / 2;
+                        const sy = (img.height - canvas.height * aspectRatio) / 2;
+                        const sWidth = canvas.width * aspectRatio;
+                        const sHeight = canvas.height * aspectRatio;
+
+                        ctx.drawImage(img, sx, sy, sWidth, sHeight, 0, 0, canvas.width, canvas.height);
+                        const resizedImage = canvas.toDataURL('image/jpeg');
+
+                        // อัปโหลดรูปภาพไปที่ GitHub
+                        uploadImageToGitHub(resizedImage, function(imageUrl) {
+                            localStorage.setItem('profileImageUrl', imageUrl);
+                            window.location.href = 'index.html';
+                        });
+                    };
                 };
                 reader.readAsDataURL(file);
+            } else {
+                window.location.href = 'index.html';
             }
-
-            window.location.href = 'index.html';
         });
+
+        function uploadImageToGitHub(imageData, callback) {
+            // ฟังก์ชันนี้ควรเป็นการอัปโหลดรูปภาพไปยัง GitHub โดยการใช้ API ของ GitHub
+            // โดยที่ในที่นี้จะเป็นเพียงตัวอย่างสมมติ
+            const mockImageUrl = 'https://github.com/USERNAME/REPOSITORY/img/profile.jpg';
+            callback(mockImageUrl);
+        }
     </script>
 </body>
 </html>
