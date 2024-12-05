@@ -59,7 +59,7 @@
         function loadProfile() {
             const name = localStorage.getItem('profileName');
             const caption = localStorage.getItem('profileCaption');
-            const imageUrl = localStorage.getItem('profileImage') || 'img/profile.jpg';
+            const imageUrl = localStorage.getItem('profileImageUrl') || 'img/profile.jpg';
 
             if (name) document.getElementById('name').textContent = name;
             if (caption) document.getElementById('caption').textContent = caption;
