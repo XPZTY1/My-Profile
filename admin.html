@@ -70,11 +70,36 @@
             }
         });
 
-        function uploadImageToGitHub(imageData, callback) {
-            // ฟังก์ชันนี้ควรเป็นการอัปโหลดรูปภาพไปยัง GitHub โดยการใช้ API ของ GitHub
-            // โดยที่ในที่นี้จะเป็นเพียงตัวอย่างสมมติ
-            const mockImageUrl = 'https://github.com/USERNAME/REPOSITORY/img/profile.jpg';
-            callback(mockImageUrl);
+        async function uploadImageToGitHub(imageData, callback) {
+            const GITHUB_TOKEN = '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';
+            const GITHUB_REPO = 'XPZTY1/My-Profile';
+            const GITHUB_BRANCH = 'main';
+
+            const base64Image = imageData.split(',')[1];
+            const imageFileName = 'img/profile.jpg';
+            const apiUrl = `https://api.github.com/repos/${GITHUB_REPO}/contents/${imageFileName}`;
+            
+            const response = await fetch(apiUrl, {
+                method: 'PUT',
+                headers: {
+                    'Authorization': `token ${GITHUB_TOKEN}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    message: 'Upload profile image',
+                    content: base64Image,
+                    branch: GITHUB_BRANCH
+                })
+            });
+
+            const data = await response.json();
+            if (response.status === 201) {
+                const imageUrl = data.content.download_url;
+                callback(imageUrl);
+            } else {
+                console.error('Error uploading image:', data);
+                alert('Error uploading image');
+            }
         }
     </script>
 </body>
