@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+</head>
+<body>
+    <h1>Edit Profile</h1>
+    <form id="profileForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="caption">Caption:</label>
+        <input type="text" id="caption" name="caption" required>
+        <br>
+        <label for="profileImage">Profile Image:</label>
+        <input type="file" id="profileImage" name="profileImage">
+        <br>
+        <button type="submit">Update Profile</button>
+    </form>
+    <a href="index.html">Back to Profile</a>
+
+    <script>
+        document.getElementById('profileForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const caption = document.getElementById('caption').value;
+            const fileInput = document.getElementById('profileImage');
+            const file = fileInput.files[0];
+
+            localStorage.setItem('profileName', name);
+            localStorage.setItem('profileCaption', caption);
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    localStorage.setItem('profileImage', e.target.result);
+                };
+                reader.readAsDataURL(file);
+            }
+
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
