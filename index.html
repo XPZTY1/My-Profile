@@ -57,16 +57,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.2/color-thief.umd.js"></script>
     <script>
         function loadProfile() {
-            const name = localStorage.getItem('profileName');
-            const caption = localStorage.getItem('profileCaption');
-            const imageUrl = localStorage.getItem('profileImageUrl') || 'img/profile.jpg';
-
-            if (name) document.getElementById('name').textContent = name;
-            if (caption) document.getElementById('caption').textContent = caption;
-            if (imageUrl) {
-                const profileImage = document.getElementById('profileImage');
-                profileImage.src = imageUrl;
-
                 profileImage.onload = function() {
                     const colorThief = new ColorThief();
                     const dominantColor = colorThief.getColor(profileImage);
