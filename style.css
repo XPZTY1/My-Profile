@@ -111,3 +111,12 @@
   background-color: #fff;
   padding: 5px;
 }
+
+.socail a {
+  transition: transform 0.3s, color 0.3s;
+}
+
+.socail a:hover {
+  transform: scale(1.2);
+  color: #ff7f50;
+}
