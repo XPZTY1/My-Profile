@@ -43,7 +43,9 @@
 
 .container h5 {
   background: #fff;
-  font-family: verdana;
+  font-family: "Kanit", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .socail {
