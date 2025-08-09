@@ -1,18 +1,26 @@
-const express = require('express'); // ใช้ express เพื่อสร้าง web server
-const cors = require('cors');       // ใช้ cors ให้เว็บอื่นเรียก API นี้ได้
+const express = require('express');
+const fs = require('fs');
+const path = require('path');
 
-const app = express(); 
-const PORT = process.env.PORT || 3000; // Render จะส่งค่า PORT มาให้ ถ้าไม่มีใช้ 3000
+const app = express();
+const PORT = 3000;
 
-app.use(cors()); // อนุญาตให้ทุกเว็บเรียก API ได้
+let counterFile = path.join(__dirname, 'counter.json');
 
-let visitors = 0; // ตัวแปรเก็บจำนวนคนเข้าเว็บ (เก็บในหน่วยความจำ)
+// โหลดจำนวนจากไฟล์ หรือเริ่มที่ 0
+let visitors = 0;
+if (fs.existsSync(counterFile)) {
+    visitors = JSON.parse(fs.readFileSync(counterFile)).count;
+}
 
-app.get('/visit', (req, res) => { // เมื่อมีการเรียก /visit
-    visitors++;                   // เพิ่มจำนวนผู้เข้าชม 1
-    res.json({ count: visitors }); // ส่งกลับเป็น JSON เช่น { count: 5 }
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/visit', (req, res) => {
+    visitors++;
+    fs.writeFileSync(counterFile, JSON.stringify({ count: visitors }));
+    res.json({ count: visitors });
 });
 
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`); // แสดงว่ารันแล้ว
+    console.log(`Server running at http://localhost:${PORT}`);
 });
