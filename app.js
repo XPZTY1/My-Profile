@@ -3,3 +3,4 @@ function coppyText(){
   navigator.clipboard.writeText(nameXbox);
   alert("Coppy Name Xbox finish!")
 }
+
