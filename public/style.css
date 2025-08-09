@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(105deg, #FF9175, #9CFC7C, #8FA2FF);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.container {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.card {
+  width: 95%;
+  height: 60%;
+  background: #ffffff0f;
+  border-radius: 25px;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 0px rgba(0, 0, 0, 0.23);
+  /* margin: 20px; */
+  padding: 5%;
+  border: 5px solid rgba(255, 255, 255, 0.096);
+}
+
+.container img {
+  /* padding: 10px; */
+  width: 150px;
+  border-radius: 50%;
+  /* padding-top: 20px; */
+  margin: 10px;
+  border: 5px solid rgba(255, 255, 255, 0.226);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 0px rgba(0, 0, 0, 0.23);
+}
+
+.content {
+  text-align: center;
+  padding: 0;
+
+}
+
+#name {
+  font-family: "Agbalumo", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  /* padding-top: 5px; */
+  margin: 4px;
+  font-size: 25px;
+  color: rgba(255, 255, 255, 0.718);
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.375);
+}
+
+#caption {
+  font-family: 'Courier New';
+  padding-top: 3px;
+  /* margin: 4px; */
+  color: rgba(255, 255, 255, 0.718);
+  text-shadow: 0 1px 10px rgb(0, 0, 0);
+}
+
+.socail {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.493);
+}
+
+
+.bi {
+  color: #ffffff89;
+}
+
+.F {
+  padding: 5px;
+  font-size: 20px;
+}
+
+.IG {
+  font-size: 20px;
+  padding: 5px;
+}
+
+.D {
+  font-size: 20px;
+  padding: 5px;
+}
+
+.M {
+  font-size: 20px;
+  padding: 5px;
+}
+
+.L {
+  font-size: 20px;
+  padding: 5px;
+}
+
+
+.socail a {
+  transition: transform 0.3s, color 0.3s;
+}
+
+.socail a:hover {
+  transform: scale(1.2);
+  text-shadow: 0 1px 20px rgb(255, 221, 0);
+  /* สีเมาส์ชี้ */
+}
+
+i:hover {
+  color: #ffffff;
+}
+
+img:hover {
+  transition: transform 0.3s, color 0.3s;
+  transform: scale(1.1);
+<<<<<<< HEAD
+}
+=======
+}
+>>>>>>> fb8ca23d20d5b17a2dc7b4ed04fea29f98679fe9
