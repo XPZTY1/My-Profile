@@ -34,7 +34,7 @@ body {
 
 .card {
   width: 95%;
-  height: 60%;
+  height: auto;
   background: #ffffff0f;
   border-radius: 25px;
   overflow: hidden;
@@ -112,7 +112,7 @@ body {
 }
 
 
-.bi {
+/* .bi {
   color: #ffffff89;
 }
 
@@ -139,11 +139,14 @@ body {
 .L {
   font-size: 20px;
   padding: 5px;
-}
+} */
 
 
 .socail a {
+  color: #ffffff89;
   transition: transform 0.3s, color 0.3s;
+  padding: 5px;
+  font-size: 20px;
 }
 
 .socail a:hover {
