@@ -44,7 +44,6 @@ body {
   /* margin: 20px; */
   padding: 5%;
   border: 5px solid rgba(255, 255, 255, 0.096);
-  transition: transform 0.9s, color 0.3s;
   animation: fade 3s forwards;
 }
 
