@@ -26,3 +26,37 @@ window.onclick = function (event) {
     modal.style.display = "none";
   }
 }
+
+const snowCount = 50; // จำนวนหิมะ
+
+for (let i = 0; i < snowCount; i++) {
+  createSnow();
+}
+
+function createSnow() {
+  const snow = document.createElement("div");
+  snow.classList.add("snow");
+
+  // สุ่มขนาด
+  const size = Math.random() * 40 + 15;
+  snow.style.width = size + "px";
+  snow.style.height = size + "px";
+
+  // สุ่มตำแหน่งแนวนอน
+  snow.style.left = Math.random() * window.innerWidth + "px";
+
+  // สุ่มความโปร่งใส
+  snow.style.opacity = Math.random() * 0.6 + 0.3;
+
+  // สุ่มความเร็วตก
+  const duration = Math.random() * 10 + 5;
+  snow.style.animationDuration = duration + "s";
+
+  document.body.appendChild(snow);
+
+  // ลบหิมะเมื่อหลุดจอ แล้วสร้างใหม่
+  setTimeout(() => {
+    snow.remove();
+    createSnow();
+  }, duration * 1000);
+}
