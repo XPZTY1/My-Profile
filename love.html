@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flowing Love Heart</title>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            background: linear-gradient(180deg,
+                    #000000,
+                    #2e0505,
+                    #920202bf,
+                    #000000,
+                    #240202);
+            background-size: 400% 400%;
+            /* animation: gradientMove 25s ease infinite; */
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        .word {
+            position: absolute;
+            font-size: 18px;
+            font-weight: 500;
+            white-space: nowrap;
+
+            background: linear-gradient(90deg, #ff6fae, #ffc1d9);
+
+            /* standard */
+            background-clip: text;
+
+            /* webkit (Chrome, Safari, iOS) */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            text-shadow: 0 0 4px rgba(255, 182, 193, 0.6);
+            will-change: transform;
+            pointer-events: none;
+
+
+
+        }
+
+        .hint {
+            position: fixed;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            color: pink;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 50% 0%;
+            }
+
+            50% {
+                background-position: 50% 100%;
+            }
+
+            100% {
+                background-position: 50% 0%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        const total = 90;          // ↓ ลดจำนวนให้ดูโปร
+        const speed = 0.0045        // ความเร็วกำลังสวย
+        let time = 0;
+        const words = [];
+
+        function heart(t) {
+            return {
+                x: 16 * Math.pow(Math.sin(t), 3),
+                y: -(13 * Math.cos(t)
+                    - 5 * Math.cos(2 * t)
+                    - 2 * Math.cos(3 * t)
+                    - Math.cos(4 * t))
+            };
+        }
+
+        // สร้างข้อความ
+        for (let i = 0; i < total; i++) {
+            const span = document.createElement("span");
+            span.className = "word";
+            span.innerText = "love you";
+            document.body.appendChild(span);
+
+            words.push({
+                el: span,
+                offset: (Math.PI * 2 / total) * i * 1.4
+            });
+        }
+
+        function animate() {
+            time += speed;
+
+            const pulse = 13 + Math.sin(time * 2) * 0.6; // หัวใจเต้นเบาๆ
+
+            for (const w of words) {
+                const t = time + w.offset;
+                const p = heart(t);
+
+                const x = Math.round(innerWidth / 2 + p.x * pulse);
+                const y = Math.round(innerHeight / 2 + p.y * pulse);
+
+                w.el.style.transform = `translate(${x}px, ${y}px)`;
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
+</body>
+
+</html>

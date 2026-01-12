@@ -33,7 +33,6 @@
 
 body {
   height: 100vh;
-  /* background: #c40000; */
   background: linear-gradient(
     180deg,
     #1a0000,
@@ -41,20 +40,25 @@ body {
     #7a0000,
     #b30000
 );
-  /* พื้นหลังสีแดง */
   overflow: hidden;
 }
 
 .snow {
-  position: absolute;
+  position: fixed;
   top: -50px;
+  width: 20px;
+  height: 20px;
   background-image: url("snow.png");
   background-size: contain;
   background-repeat: no-repeat;
   pointer-events: none;
+  z-index: 9999;
+
   animation-name: fall;
   animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
+
 
 @keyframes fall {
   to {
@@ -80,7 +84,7 @@ body {
   justify-content: center;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 0px rgba(0, 0, 0, 0.23);
   /* margin: 20px; */
-  padding: 5%;
+  padding: 20px;
   border: 5px solid rgba(255, 255, 255, 0.096);
   animation: fade 3s forwards;
 }
@@ -279,5 +283,44 @@ img:hover {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+
+
+
+.love {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.love p a {
+  color: #ff9595;
+  font-size: 20px;
+  display: inline-block;
+  animation: love 2s ease-in-out infinite;
+  text-shadow:
+    0 0 5px #ff4d4d,
+    0 0 10px #ff4d4d,
+    0 0 20px #ff1a1a,
+    0 0 40px #ff1a1a;
+}
+
+
+@keyframes love {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.5);
+    opacity: 0.6;
   }
 }
