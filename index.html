@@ -1,99 +1,131 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8" />
     <link rel="web icon" type="me-icon" href="icon.png">
-    <meta charset="utf-8">
     <meta property="og:image" content="profile.jpg">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://xpzty1.github.io/My-Profile/">
     <meta property="og:image" content="https://xpzty1.github.io/My-Profile/profile.jpg">
     <meta property="og:title" content="Punyapat Kongwoon">
     <meta property="og:description" content="My Profile">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Punyapat Kongwoon</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chonburi&family=Kanit&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Mono:wght@300;400&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+    <div class="glow"></div>
 
-    <div class="c">
-        <div class="container">
-            <!-- Card -->
-            <div class="card">
-                <!-- Img -->
-                <img class="cover" src="profile.jpg">
-                <!-- Img -->
-
-                <!-- Content -->
-                <div class="content">
-                    <h5 class="border-bottom" id="name">
-                        Punyapat Kongwoon
-                    </h5>
-                    <p id="caption">
-                        Dream big and dare to fail.
-                    </p>
-                </div>
-                <!-- Content -->
-
-                <!-- Socail -->
-
-                <div class="socail">
-
-                    <a href="https://github.com/XPZTY1" target="_blank"><i class="bi bi-github"></i></a>
-
-                    <a class="F" href="https://www.facebook.com/punyapat.kongwoon?mibextid=ZbWKwL" target="_blank"><i
-                            class="bi bi-facebook"></i></a>
-
-                    <a class="L" href="https://line.me/ti/p/q0gtdPbje2" target="_blank"><i class="bi bi-line"></i></ฟ>
-
-                    <a class="IG" href="https://instagram.com/pkt.sn?igshid=OGQ5ZDc2ODk2ZA==" target="_blank"><i
-                            class="bi bi-instagram"></i></a>
-
-                    <a class="D" href="https://discord.gg/AJ7p7vSSPm" target="_blank"><i class="bi bi-discord"></i></a>
-
-                    <a class="M" onclick="xbox()"><i class="bi bi-xbox"></i></a>
-
-
-                </div>
-
-                <!-- Socail -->
-
-                <!-- Love -->
-                 <div class="love">
-                    <p class="loveP"><a href="love.html"><i class="bi bi-heart-fill"></i></a></p>
-                 </div>
-                <!-- Love -->
-
+    <!-- HERO -->
+    <section class="hero-section">
+        <div class="hero">
+            <div class="avatar-wrap">
+                <img class="avatar" src="profile.jpg" alt="Punyapat Kongwoon" />
             </div>
-            <!-- Card -->
-        </div>
-    </div>
 
-    <div class="modal" id="myModal">
-        <div class="modal-content">
-            <button class="close-btn" id="closeModal">X</button>
-            
-            <button onclick="coppyText()" class="copy" id="copy">Click</button>
-            <div id="modalResult" class="result"></div>
-        </div>
-    </div>
+            <p class="tag">Personal Profile</p>
+            <h1>Punyapat<br /><span>Kongwoon</span></h1>
+            <p class="quote">Dream big and dare to fail.</p>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-    <script src="app.js"></script>
-    
+            <div class="divider"></div>
+
+            <div class="socials">
+                <a href="https://www.facebook.com/punyapat.kongwoon?mibextid=ZbWKwL" class="social-link"
+                    target="_blank">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.413c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.234 2.686.234v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z" />
+                    </svg>
+                    Facebook
+                </a>
+                <a href="https://line.me/ti/p/q0gtdPbje2" class="social-link" target="_blank">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M19.952 12.157c0-4.597-4.61-8.34-10.276-8.34C4.012 3.817 0 7.24 0 12.157c0 4.123 3.657 7.576 8.596 8.23.335.072.79.22.905.506.103.26.068.668.033.931l-.146.878c-.044.26-.205 1.017.891.555 1.095-.463 5.909-3.478 8.065-5.955 1.487-1.633 2.608-3.647 2.608-5.145zM7.72 14.547H5.53a.45.45 0 0 1-.45-.45V9.9a.45.45 0 0 1 .9 0v3.748H7.72a.45.45 0 0 1 0 .9zm1.8 0a.45.45 0 0 1-.9 0V9.9a.45.45 0 0 1 .9 0v4.647zm4.498 0a.45.45 0 0 1-.45.45.458.458 0 0 1-.36-.18l-2.388-3.248v2.978a.45.45 0 0 1-.9 0V9.9a.45.45 0 0 1 .45-.45c.135 0 .27.06.36.18l2.388 3.248V9.9a.45.45 0 0 1 .9 0v4.647zm3.148.45h-2.19a.45.45 0 0 1-.45-.45V9.9a.45.45 0 0 1 .45-.45h2.19a.45.45 0 0 1 0 .9h-1.74v1.124h1.74a.45.45 0 0 1 0 .9h-1.74v1.124h1.74a.45.45 0 0 1 0 .9z" />
+                    </svg>
+                    Line
+                </a>
+                <a href="https://www.instagram.com/pkt.sn/" class="social-link" target="_blank">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+                    </svg>
+                    Instagram
+                </a>
+
+                <a href="https://github.com/xpzty1" class="social-link" target="_blank">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z" />
+                    </svg>
+                    GitHub
+                </a>
+            </div>
+        </div>
+
+        <div class="scroll-hint">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section>
+        <div class="container">
+            <p class="section-label">01 — About</p>
+            <h2 class="section-title">Who I Am</h2>
+            <p class="body-text">
+                สวัสดีครับ ผมเต้เป็นคนที่ชอบการเขียนโค้ด
+                เริ่มต้นจากการดูคลิปสอนใน YouTube แล้วลองทำตาม จนวันนี้สามารถพัฒนาโปรเจกต์ของตัวเองได้หลายรูปแบบ
+                ทั้งเว็บไซต์ บอท และงาน IoT
+
+                ผมสนุกกับการเรียนรู้สิ่งใหม่ ๆ และมักจะท้าทายตัวเองให้ทำโปรเจกต์ที่ยากขึ้นเรื่อย ๆ
+                สำหรับผม เทคโนโลยีไม่ใช่แค่การทำงานของเครื่องจักร แต่คือพื้นที่สำหรับความคิดสร้างสรรค์
+            </p>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section>
+        <div class="container">
+            <p class="section-label">02 — Skills</p>
+            <h2 class="section-title">What I Know</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">HTML</span>
+                <span class="skill-tag">CSS</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">GitHub</span>
+                <span class="skill-tag">Problem Solving</span>
+                <span class="skill-tag">Creative Thinking</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section>
+        <div class="container">
+            <p class="section-label">03 — Contact</p>
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="body-text">อยากพูดคุยหรือร่วมงานกัน ติดต่อได้เลยครับ</p>
+            <div class="socials" style="justify-content:flex-start; margin-top: 1.5rem;">
+                <a href="https://www.facebook.com/punyapat.kongwoon?mibextid=ZbWKwL" class="social-link"
+                    target="_blank">Facebook</a>
+                <a href="https://line.me/ti/p/q0gtdPbje2" class="social-link" target="_blank">Line</a>
+                <a href="https://www.instagram.com/pkt.sn/" class="social-link" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Crafted with care by <span>Punyapat Kongwoon</span> · 2025</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
